@@ -19,7 +19,7 @@ return new class extends Migration
             $table->increments('alunos_id', true); // Criara o ID incrementado para fazer relacionamento
             $table->string('nome');
             $table->string('sobrenome');
-            $table->string('endereco');
+            $table->string('endereco')->nullable();
             $table->timestamp('data_nascimento')->nullable();
             $table->string('senha');
             $table->boolean('ativo')->default(true);

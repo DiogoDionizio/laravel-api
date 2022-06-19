@@ -53,7 +53,15 @@ class AlunosController extends Controller
         try {
             $post = $resquest->all();
 
-            dd($post);
+            $this->aluno->create([
+                'nome' => $post['nome'],
+                'sobrenome' => $post['sobrenome'],
+                'endereco' => $post['endereco'],
+                'senha' => $post['senha'],
+                'cpf' => $post['cpf'],
+            ]);
+
+            return response()->json('', Response::HTTP_CREATED);
         } catch (\Throwable $th) {
             return $th->getMessage();
         }
